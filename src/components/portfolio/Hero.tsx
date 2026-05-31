@@ -1,5 +1,6 @@
 import profile from "@/assets/profile.jpg";
 import { Github, Linkedin, Mail, Twitter, FileDown, ArrowRight } from "lucide-react";
+import { EMAIL, GITHUB_URL, LINKEDIN_URL, RESUME_URL } from "./contact-info";
 
 export function Hero() {
   return (
@@ -33,7 +34,9 @@ export function Hero() {
               View Projects <ArrowRight className="size-4" />
             </a>
             <a
-              href="/resume.pdf"
+              href={RESUME_URL}
+              target="_blank"
+              rel="noreferrer"
               className="inline-flex items-center gap-2 px-5 py-3 rounded-xl glass font-medium hover:bg-white/10 transition"
             >
               <FileDown className="size-4" /> Download Resume
@@ -47,9 +50,9 @@ export function Hero() {
           </div>
           <div className="mt-8 flex items-center gap-4 text-muted-foreground">
             {[
-              { Icon: Github, href: "https://github.com" },
-              { Icon: Linkedin, href: "https://linkedin.com" },
-              { Icon: Mail, href: "mailto:hello@example.com" },
+              { Icon: Github, href: GITHUB_URL },
+              { Icon: Linkedin, href: LINKEDIN_URL },
+              { Icon: Mail, href: `mailto:${EMAIL}` },
               { Icon: Twitter, href: "https://twitter.com" },
             ].map(({ Icon, href }, i) => (
               <a
